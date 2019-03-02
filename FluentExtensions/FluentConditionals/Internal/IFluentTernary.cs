@@ -1,11 +1,11 @@
 using System;
 
-namespace Yuri.Li.FluentExtensions.Internal.FluentConditionals
+namespace FluentExtensions.FluentConditionals.Internal
 {
     public interface IFluentTernary<T>
     {
-        T Else(Func<T> supplier);
+        T Else(Func<T> elseSupplier);
 
-        T Else(T value);
+        T Else(T elseValue);
     }
 }

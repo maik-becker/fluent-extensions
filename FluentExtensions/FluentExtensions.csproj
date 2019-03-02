@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <PackageVersion>0.0.0</PackageVersion>
+        <Title>FluentExtensions</Title>
+        <Authors>Maik Becker &lt;hi@yuri.li&gt;</Authors>
+        <PackageLicenseUrl>https://www.gnu.org/licenses/gpl-3.0.txt</PackageLicenseUrl>
+        <RepositoryType>Git</RepositoryType>
+        <PackageProjectUrl>https://github.com/maik-becker/fluent-extensions</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/maik-becker/fluent-extensions.git</RepositoryUrl>
+    </PropertyGroup>
+
+</Project>

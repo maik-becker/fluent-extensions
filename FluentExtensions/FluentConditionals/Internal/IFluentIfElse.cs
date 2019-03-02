@@ -1,15 +1,15 @@
 using System;
 
-namespace Yuri.Li.FluentExtensions.Internal.FluentConditionals
+namespace FluentExtensions.FluentConditionals.Internal
 {
     public interface IFluentIfElse
     {
-        void Else(Action action);
+        void Else(Action elseAction);
     }
 
 
-    public interface IFluentIfItIfElse<T> : IFluentIfElse
+    public interface IFluentIfItIfElse<out T> : IFluentIfElse
     {
-        void Else(Action<T> action);       
+        void Else(Action<T> elseAction);       
     }
 }

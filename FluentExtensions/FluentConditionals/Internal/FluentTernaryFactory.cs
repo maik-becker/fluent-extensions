@@ -1,6 +1,6 @@
 using System;
 
-namespace Yuri.Li.FluentExtensions.Internal.FluentConditionals
+namespace FluentExtensions.FluentConditionals.Internal
 {
     internal static class FluentTernaryFactory
     {
@@ -12,9 +12,9 @@ namespace Yuri.Li.FluentExtensions.Internal.FluentConditionals
 
         private class FalseFluentTernary<T> : IFluentTernary<T>
         {
-            public T Else(Func<T> supplier) => supplier();
+            public T Else(Func<T> elseSupplier) => elseSupplier();
 
-            public T Else(T value) => value;
+            public T Else(T elseValue) => elseValue;
         }
 
         private class TrueValueGivenFluentTernary<T> : IFluentTernary<T>
@@ -23,9 +23,9 @@ namespace Yuri.Li.FluentExtensions.Internal.FluentConditionals
 
             public TrueValueGivenFluentTernary(T whenTrue) => _whenTrue = whenTrue;
 
-            public T Else(Func<T> supplier) => _whenTrue;
+            public T Else(Func<T> elseSupplier) => _whenTrue;
 
-            public T Else(T value) => _whenTrue;
+            public T Else(T elseValue) => _whenTrue;
         }
 
         private class TrueSupplierGivenFluentTernary<T> : IFluentTernary<T>
@@ -34,9 +34,9 @@ namespace Yuri.Li.FluentExtensions.Internal.FluentConditionals
 
             public TrueSupplierGivenFluentTernary(Func<T> whenTrue) => _whenTrue = whenTrue;
 
-            public T Else(Func<T> supplier) => _whenTrue();
+            public T Else(Func<T> elseSupplier) => _whenTrue();
 
-            public T Else(T value) => _whenTrue();
+            public T Else(T elseValue) => _whenTrue();
         }
     }
 }

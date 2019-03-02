@@ -1,6 +1,6 @@
 using System;
 
-namespace Yuri.Li.FluentExtensions.Internal.FluentConditionals
+namespace FluentExtensions.FluentConditionals.Internal
 {
     internal static class FluentIfElseFactory
     {
@@ -26,12 +26,12 @@ namespace Yuri.Li.FluentExtensions.Internal.FluentConditionals
 
         internal class FalseFluentIfElse : IFluentIfElse
         {
-            public void Else(Action action) => action();
+            public void Else(Action elseAction) => elseAction();
         }
 
         internal class TrueFluentIfElse : IFluentIfElse
         {
-            public void Else(Action action)
+            public void Else(Action elseAction)
             {
                 // Do nothing
             }
@@ -44,15 +44,15 @@ namespace Yuri.Li.FluentExtensions.Internal.FluentConditionals
 
             public FalseFluentIfItElse(T it) => _it = it;
 
-            public void Else(Action<T> action)
+            public void Else(Action<T> elseAction)
             {
-                action(_it);
+                elseAction(_it);
             }
         }
 
         private class TrueFluentIfItElse<T> : TrueFluentIfElse, IFluentIfItIfElse<T>
         {
-            public void Else(Action<T> action)
+            public void Else(Action<T> elseAction)
             {
                 // Do nothing
             }

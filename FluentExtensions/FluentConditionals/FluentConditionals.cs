@@ -1,29 +1,23 @@
 using System;
-using Yuri.Li.FluentExtensions.Internal.FluentConditionals;
+using FluentExtensions.FluentConditionals.Internal;
 
-namespace Yuri.Li.FluentExtensions.FluentConditionals
+namespace FluentExtensions.FluentConditionals
 {
     public static class If
     {
-        public static IFluentConditional _(bool value)
-        {
-            return FluentConditionals.If(value);
-        }
+        /// <summary>
+        /// Alternative to FluentConditionals#If without the need of static imports.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static IFluentConditional _(bool value) => FluentConditionals.If(value);
     }
-}
 
-namespace Yuri.Li.FluentExtensions.FluentConditionals
-{
     public static class FluentConditionals
     {
-        public static IFluentConditional If(bool condition)
-        {
-            return FluentConditionalFactory.Of(condition);
-        }
+        public static IFluentConditional If(bool condition) => FluentConditionalFactory.Of(condition);
 
-        public static IFluentConditional If<T>(this T it, Predicate<T> predicate)
-        {
-            return If(predicate(it));
-        }
+        public static IFluentIfItConditional<T> If<T>(this T it, Predicate<T> predicate) =>
+            FluentConditionalFactory.Of(predicate(it), it);
     }
 }

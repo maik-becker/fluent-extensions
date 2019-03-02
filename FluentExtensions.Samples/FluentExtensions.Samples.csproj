@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Module</OutputType>
+        <TargetFramework>netcoreapp2.0</TargetFramework>
+        <IsPackable>false</IsPackable>
+        <PackageVersion />
+        <Authors />
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\FluentExtensions\FluentExtensions.csproj" />
+    </ItemGroup>
+
+</Project>
