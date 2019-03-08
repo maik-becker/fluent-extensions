@@ -78,10 +78,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enumerables\ForEachTest.cs" />
+    <Compile Include="Enumerables\PeekTest.cs" />
     <Compile Include="FluentConditionals\FluentIfElseTest.cs" />
     <Compile Include="FluentConditionals\FluentIfItElseTest.cs" />
     <Compile Include="FluentConditionals\FluentTernaryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strings\IsContainedByTest.cs" />
+    <Compile Include="Strings\IsNullOrEmptyTest.cs" />
+    <Compile Include="Strings\IsNullOrWhitespaceTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
