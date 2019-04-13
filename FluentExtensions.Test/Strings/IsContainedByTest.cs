@@ -48,5 +48,14 @@ namespace FluentExtensions.Strings
             var exception = Record.Exception(() => substring.IsContainedBy(containing));
             exception.Should().BeOfType<ArgumentNullException>();
         }
+
+        [Fact]
+        public void givenSubstringAlternatingCase_whenIsContainedBy_thenTrue()
+        {
+            string containing = "Hello";
+            string substring = "ELL";
+            var isContainedBy = substring.IsContainedBy(containing, StringComparison.CurrentCultureIgnoreCase);
+            isContainedBy.Should().BeTrue();
+        }
     }
 }
